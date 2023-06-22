@@ -139,15 +139,15 @@ app.use(express.json())    // <==== parse request body as JSON
 
 // app.listen(8090)
 
-var privateKey = fs.readFileSync("phuocphat.site-1.key", "utf8");
-var certificate = fs.readFileSync("phuocphat.site-1.crt", "utf8");
-var credentials = {key: privateKey, cert: certificate};
+// var privateKey = fs.readFileSync("phuocphat.site-1.key", "utf8");
+// var certificate = fs.readFileSync("phuocphat.site-1.crt", "utf8");
+// var credentials = {key: privateKey, cert: certificate};
 
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(credentials, app);
+// var httpsServer = https.createServer(credentials, app);
   
-httpServer.listen(8091);
-httpsServer.listen(8090);
+httpServer.listen(8090);
+// httpsServer.listen(8090);
 
 function correctLanguageCode(code) {
 	if(code === "en_us") {
@@ -1413,7 +1413,7 @@ app.get('/2/autocorrect', (req, res) => {
 
 function setResponseHeader(res) {
 	res.setHeader("Access-Control-Allow-Headers", "content-type,tiny-api-key")
-	res.setHeader("Access-Control-Allow-Origin", "https://phuocphat.site")
+	res.setHeader("Access-Control-Allow-Origin", "http://192.168.1.16:8000")
 	res.setHeader("Access-Control-Allow-Credentials", true)
 	res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS")
 	res.setHeader("Access-Control-Max-Age", 3600)
