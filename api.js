@@ -1413,7 +1413,7 @@ app.get('/2/autocorrect', (req, res) => {
 
 function setResponseHeader(res) {
 	res.setHeader("Access-Control-Allow-Headers", "content-type,tiny-api-key")
-	res.setHeader("Access-Control-Allow-Origin", "http://192.168.1.16:8000")
+	res.setHeader("Access-Control-Allow-Origin", "http://0.0.0.0:8000")
 	res.setHeader("Access-Control-Allow-Credentials", true)
 	res.setHeader("Access-Control-Allow-Methods", "GET,PUT,POST,DELETE,OPTIONS")
 	res.setHeader("Access-Control-Max-Age", 3600)
